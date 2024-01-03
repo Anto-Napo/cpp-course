@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cmath>
 
 int main(){
     using std::cout;
@@ -23,13 +24,13 @@ int main(){
     }
 
     if(ctof) {
-        cout << "Celsius temperature: ";
+        cout << "Celsius temperature (default = 0): ";
 
         cin >> c;
 
         result = c * (9 / (double) 5) + 32;
     } else if (!ctof) {
-        cout << "Farenheit temperature: ";
+        cout << "Farenheit temperature (default = 0): ";
 
         cin >> f;
 
