@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <ctime>
 
 
 //! Alias
@@ -96,7 +97,9 @@ int main() {
 
   cout << "What's the month number? (1 - 12)" << '\n';
 
-  cin >> month;
+  //* Commented because of next lessons
+
+  // cin >> month;
 
   switch(month) {
     case 1:
@@ -138,6 +141,19 @@ int main() {
     default:
       cout << "Enter a valid number (1-12), " << month << " isn't a valid month." << '\n';
   }
+
+
+  //! Random numbers
+
+  // Seed (usally the current time) included with ctime
+  srand(time(NULL));
+
+  // random number between 1 and 6
+  int rdm = rand() % 6 + 1;
+
+  cout << "The number rolled is " << rdm;
+
+  //? You may want to use switches with random numbers for events
 
   return 0;
 }

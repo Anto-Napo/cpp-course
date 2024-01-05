@@ -1,12 +1,7 @@
 #include <iostream>
 #include <cmath>
 
-int main(){
-    using std::cout;
-    using std::cin;
-
-    cout << "****** C & F conversion ******" << '\n';
-
+namespace cf {
     double c;
 
     double f;
@@ -14,6 +9,19 @@ int main(){
     bool ctof;
 
     double result;
+
+    bool redo;
+}
+
+
+int main(){
+    using std::cout;
+    using std::cin;
+    using namespace cf;
+
+    while (true)
+    {
+    cout << "****** C & F conversion ******" << '\n';
 
     cout << "Celsius to farenheit (1) or farenheit to Celsius (0) ?" << '\n';
 
@@ -37,7 +45,18 @@ int main(){
         result = (f - 32) * 5 / (double) 9;
     }
 
-    cout << "The result is " << result << (ctof ? "F" : "C") << '\n' << "****************************";
+    cout << "The result is " << result << (ctof ? "F" : "C") << "\n\n";
 
+    cout << "Do you want to continue (1: yes / 0: no)?" << '\n';
+
+    cin >> redo;
+    
+    cout << '\n';
+
+    if (!redo) break;
+    }
+
+    cout << "****************************";
+    
     return 0;
 }
