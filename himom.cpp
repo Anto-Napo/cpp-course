@@ -18,6 +18,8 @@ namespace maths {
   double greater;
 }
 
+void happyBirthday(std::string name);
+
 int main() {
   using std::string;
   using std::cout;
@@ -45,7 +47,7 @@ int main() {
 
   int x = 2;
 
-  std::cout << first::x << '\n';
+  std::cout << first::x << "\n\n";
 
 
   //! type conversion
@@ -79,14 +81,14 @@ int main() {
 
   std::cin >> birthyear;
 
-  std::cout << "Hello " << name << ", you're born in " << birthyear << '\n'; */
+  std::cout << "Hello " << name << ", you're born in " << birthyear << '\n\n'; */
 
   
   //! maths
 
   maths::greater = std::max(maths::first, maths::second);
 
-  cout << "Greater: " << maths::greater << '\n';
+  cout << "Greater: " << maths::greater << "\n\n";
   // min(); 
 
   //? Need `#include <cmath>`: pow(x, y); sqrt(x); abs(-x); round(double); && ceil(double); && floor(double);
@@ -142,6 +144,8 @@ int main() {
       cout << "Enter a valid number (1-12), " << month << " isn't a valid month." << '\n';
   }
 
+  cout << '\n';
+
 
   //! Random numbers
 
@@ -151,9 +155,17 @@ int main() {
   // random number between 1 and 6
   int rdm = rand() % 6 + 1;
 
-  cout << "The number rolled is " << rdm;
+  cout << "The number rolled is " << rdm << "\n\n";
 
   //? You may want to use switches with random numbers for events
 
+  //! Functions
+
+  happyBirthday("Anto");
+
   return 0;
+}
+
+void happyBirthday(std::string name) {
+  std::cout << "Happy birthday " << name << "!\n\n";
 }

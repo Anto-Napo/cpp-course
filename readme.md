@@ -2,6 +2,8 @@
 
 You may want to install the vscode extension `Better Comments`
 
+To compile: `g++ file.cpp -o filename ; ./filename`
+
 # User input
 
 `std::cin >> var;`
@@ -70,6 +72,24 @@ columns = 10
 */
 ```
 
-# Random numbers
+# Overload functions
 
-`#include <ctime>`
+You can overload functions by creating functions with the same name but with different parameters.
+
+```c++
+void bakePizza() {
+  std::cout << "Here is your pizza!";
+}
+
+void bakePizza(std::string topping){
+  std::cout << "Here is your " << topping << " pizza!";
+} 
+```
+
+# Variable scope
+
+Global variables are declared outside of any functions.
+
+To use a global variable when it's also declared locally, use the operator `::` before the name of the variable.
+
+Using global variables is generally avoided.
