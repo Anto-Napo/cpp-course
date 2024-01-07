@@ -93,3 +93,11 @@ Global variables are declared outside of any functions.
 To use a global variable when it's also declared locally, use the operator `::` before the name of the variable.
 
 Using global variables is generally avoided.
+
+# Arrays
+
+`type var[] = {x, y, z};`
+
+You have to specify the size of an array if it's not defined:
+
+`type var[x];`
