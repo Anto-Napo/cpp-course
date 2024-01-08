@@ -20,6 +20,12 @@ namespace maths {
 
 void happyBirthday(std::string name);
 
+double getTotal(double prices[], int size);
+
+int searchArray(int arr[], int size, int toFind);
+
+void sortArr(int toSortArr[], int size);
+
 int main() {
   using std::string;
   using std::cout;
@@ -159,11 +165,117 @@ int main() {
 
   //? You may want to use switches with random numbers for events
 
+
   //! Functions
 
   happyBirthday("Anto");
 
+  
+  //! Arrays
+
+  //* Pass array to a function
+
+  //? The function array is a pointer, so it's impossible to get the size of the array from there, so we give it the size when we call it. 
+  double prices[] = {5.99, 45.99, 1.50, 31.99};
+
+  int size = sizeof(prices)/sizeof(prices[0]);
+
+  double total = getTotal(prices, size);
+
+  std::cout << "Total: $" << total << '\n';
+
+
+  //* Search through an array to find an element (Commented bcs of next lessons)
+
+  //? -1 usally means that the index wasn't found.
+  int numbers[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+
+  int foundIndex;
+
+  int toFind;
+
+  cout << "Which number do you want to find? ";
+
+  // cin >> toFind;
+
+  // foundIndex = searchArray(numbers, sizeof(numbers)/sizeof(numbers[0]), toFind);
+
+  // if(foundIndex != -1)  {
+  //   cout << "The number " << toFind << " was found at the index " << foundIndex;
+  // } else {
+  //   cout << "The number " << toFind << " wasn't found.";
+  // }
+
+  std::cout << "\n\n";
+
+  //* Bubble sort algorithm
+
+  int toSortArr[] = {1, 10, 9, 2, 8, 3, 7, 4, 6, 5};
+
+  sortArr(toSortArr, sizeof(toSortArr)/sizeof(toSortArr[0]));
+
+  for(int i = 0; i < sizeof(toSortArr)/sizeof(toSortArr[0]); i++) {
+    std::cout << toSortArr[i] << ' ';
+  }
+
+  std::cout << "\n\n";
+
+  //* Fill an array with user input
+
+  std::string foods[5];
+
+  for(int i = 0; i < sizeof(foods)/sizeof(std::string); i++) {
+    std::cout << "Enter which food you like or quit with 'q'. #" << i + 1 << ": ";
+    std::getline(std::cin, foods[i]);
+    if(foods[i] == "q") {
+      foods[i].clear();
+      break;
+    }
+  }
+
+  std::cout << "You like:\n";
+
+  for(int i = 0; !foods[i].empty(); i++) {
+    std::cout << foods[i] << '\n';
+  }
+
+  std::cout << '\n';
+
   return 0;
+}
+
+void sortArr(int toSortArr[], int size) {
+  int temp;
+  
+  for(int i = 0; i < size - 1; i++){
+    for(int j = 0; j < size - i - 1; j++) {
+      if(toSortArr[j] > toSortArr[j + 1]) {
+        temp = toSortArr[j];
+        toSortArr[j] = toSortArr[j + 1];
+        toSortArr[j + 1] = temp;
+      }
+    }
+  }
+}
+
+int searchArray(int arr[], int size, int toFind) {
+  for(int i = 0; i < size; i++) {
+    if(arr[i] == toFind) {
+      return i;
+    }
+  }
+
+  return -1;
+}
+
+double getTotal(double prices[], int size) {
+  double total = 0;
+
+  for(int i = 0; i < size; i++) {
+    total += prices[i];
+  }
+
+  return total;
 }
 
 void happyBirthday(std::string name) {
