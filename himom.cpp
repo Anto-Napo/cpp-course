@@ -220,18 +220,18 @@ int main() {
 
   std::cout << "\n\n";
 
-  //* Fill an array with user input
+  //* Fill an array with user input (commented bcs of next lessons)
 
   std::string foods[5];
 
-  for(int i = 0; i < sizeof(foods)/sizeof(std::string); i++) {
-    std::cout << "Enter which food you like or quit with 'q'. #" << i + 1 << ": ";
-    std::getline(std::cin, foods[i]);
-    if(foods[i] == "q") {
-      foods[i].clear();
-      break;
-    }
-  }
+  // for(int i = 0; i < sizeof(foods)/sizeof(std::string); i++) {
+  //   std::cout << "Enter which food you like or quit with 'q'. #" << i + 1 << ": ";
+  //   std::getline(std::cin, foods[i]);
+  //   if(foods[i] == "q") {
+  //     foods[i].clear();
+  //     break;
+  //   }
+  // }
 
   std::cout << "You like:\n";
 
@@ -239,7 +239,25 @@ int main() {
     std::cout << foods[i] << '\n';
   }
 
-  std::cout << '\n';
+  std::cout << "\n\n";
+
+  //* Multidimensional array
+
+  //? var[(rows)][columns] 
+  std::string things[][3] = {{"Pizza", "Hamburger", "Hotdog"},
+                             {"YouTube", "Twitch", "TikTok"},
+                             {"Pen", "Bic", "Fluo"}};
+
+  int thingsRows = sizeof(things)/sizeof(things[0]);
+
+  int thingsColumns = sizeof(things[0])/sizeof(things[0][0]);
+
+  for(int i = 0; i < thingsRows; i++) {
+    for(int j = 0; j < thingsColumns; j++) {
+      std::cout << things[i][j] << ' ';
+    }
+    std::cout << '\n';
+  }
 
   return 0;
 }

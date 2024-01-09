@@ -2,9 +2,9 @@
 
 [From BroCode](https://www.youtube.com/watch?v=-TkoO8Z07hI "BroCode Video")
 
-You may want to install the vscode extension `Better Comments`
+You may want to install the vscode extension `Better Comments`.
 
-To compile: `g++ file.cpp -o filename ; ./filename`
+To compile on Windows: `g++ file.cpp -o filename ; ./filename`
 
 # User input
 
@@ -137,11 +137,11 @@ for(std::string element : elements) {
 
 ## Pass an array to a function
 
-L.176 of `himom.cpp`.
+L.xxx of `himom.cpp`.
 
 ## Bubble sort algorithm
 
-L.188 of `himom.cpp"
+L.xxx of `himom.cpp`.
 
 ## fill()
 
@@ -157,10 +157,14 @@ fill(foods + SIZE/3, foods + (SIZE/3)*2, "Hamburger");
 fill(foods + (SIZE/3)*2, foods + SIZE, "Hotdogs");
 
 for(std::string food : foods) {
-  std::cout << food << '\n';
+  std::cout << food << '\n';  
 }
 
 // Output: 33 times Pizza & 33 times Hamburger & 33 times Hotdog
 ```
 
 `fill(beginning, end, value);`
+
+## Multidimensional
+
+L.xxx of `himom.cpp`.
