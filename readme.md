@@ -1,10 +1,16 @@
 # C++ course
 
-[From BroCode](https://www.youtube.com/watch?v=-TkoO8Z07hI "BroCode Video")
+[From BroCode](https://www.youtube.com/watch?v=-TkoO8Z07hI "BroCode's Video")
 
 You may want to install the vscode extension `Better Comments`.
 
-To compile on Windows: `g++ file.cpp -o filename ; ./filename`
+To compile on Windows: `g++ file.cpp -o filename ; ./filename`.
+
+There are two main files: `general.cpp` & `memory.cpp`.
+
+The file `general.cpp` has two spaces as indents instead of four.
+
+I did all of the test by myself with a very little help of the video, so it may not be optimal.
 
 # User input
 
@@ -137,11 +143,11 @@ for(std::string element : elements) {
 
 ## Pass an array to a function
 
-L.xxx of `himom.cpp`.
+L.xxx of `general.cpp`.
 
 ## Bubble sort algorithm
 
-L.xxx of `himom.cpp`.
+L.xxx of `general.cpp`.
 
 ## fill()
 
@@ -165,6 +171,60 @@ for(std::string food : foods) {
 
 `fill(beginning, end, value);`
 
-## Multidimensional
+## Multidimensional arrays
 
-L.xxx of `himom.cpp`.
+L.xxx of `general.cpp`.
+
+# Memory
+
+## &
+
+& correspond to the memory address, or the reference.
+
+## Pass references to a function
+
+When we do a classic function with parameters, these parameters are copies of the original variables, but when we do with reference, it passes the original variable and not a copy.
+
+L.xxx of `memory.cpp`.
+
+We can notice that the memory adresses of the swap function and those of the main function are the same.
+
+## Constant parameters
+
+For functions, if we don't want to change a parameter and want to use it as a read-only parameter, you can make it a constant so it's more secure, especially if it's with references where we don't want to change the original value.
+
+L.xxx of `memory.cpp`.
+
+## Pointers
+
+### What's a pointer?
+
+Thanks to the [pointer explained video](https://www.youtube.com/watch?v=2ybLD6_2gKM "Low Level Learning's Video") by Low Level Learning.
+
+A pointer is a variable that holds the memory address of another variable.
+
+```c++
+int *pX = &x;
+```
+
+In english: integer pointer named pX is set to the adress of x.
+
+```c++
+int y = *pX;
+```
+
+In english: integer named y is set to the thing pointed to by x.
+
+It's used because it makes code more readable.
+
+### Null pointers
+
+`Null` means that something has no value.
+
+A pointer that has a `nullptr` value (null pointer) means that it doesn't point to anything.
+
+It's useful if we don't assign to anything otherwise it could point to something we don't know.
+
+Avoid printing a null pointer.
+
+L.xxx of `memory.cpp`.
