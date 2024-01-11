@@ -143,11 +143,11 @@ for(std::string element : elements) {
 
 ## Pass an array to a function
 
-L.xxx of `general.cpp`.
+L.176 of `general.cpp`.
 
 ## Bubble sort algorithm
 
-L.xxx of `general.cpp`.
+L.211 of `general.cpp`.
 
 ## fill()
 
@@ -173,7 +173,7 @@ for(std::string food : foods) {
 
 ## Multidimensional arrays
 
-L.xxx of `general.cpp`.
+L.244 of `general.cpp`.
 
 # Memory
 
@@ -185,7 +185,7 @@ L.xxx of `general.cpp`.
 
 When we do a classic function with parameters, these parameters are copies of the original variables, but when we do with reference, it passes the original variable and not a copy.
 
-L.xxx of `memory.cpp`.
+L.17 of `memory.cpp`.
 
 We can notice that the memory adresses of the swap function and those of the main function are the same.
 
@@ -193,7 +193,7 @@ We can notice that the memory adresses of the swap function and those of the mai
 
 For functions, if we don't want to change a parameter and want to use it as a read-only parameter, you can make it a constant so it's more secure, especially if it's with references where we don't want to change the original value.
 
-L.xxx of `memory.cpp`.
+L.27 of `memory.cpp`.
 
 ## Pointers
 
@@ -227,4 +227,26 @@ It's useful if we don't assign to anything otherwise it could point to something
 
 Avoid printing a null pointer.
 
-L.xxx of `memory.cpp`.
+L.34 of `memory.cpp`.
+
+## Dynamic memory
+
+Dynamic memory is usally used for arrays.
+
+You can initiate a pointer with this:
+
+```c++
+char *pX = new char[size];
+```
+
+When there we initiate a pointer for dynamic memory with `new`, we should always delete it to avoid memory leak.
+
+```c++
+delete[] pX;
+```
+
+L.49 of `memory.cpp`.
+
+## Recursion & Function template
+
+L.72 & 78 of `memory.cpp`.

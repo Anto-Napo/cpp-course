@@ -9,15 +9,17 @@ bool checkTie(const char *spaces);
 
 int main() {
     srand(time(NULL));
-    char spaces[9] = {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '};
-    const char player = 'X';
+    char spaces[9];
+    const char player = 'X';d
     const char computer = 'O';
-    bool running = 1;
-    bool startOver = 0;
+    bool running = true;
+    bool startOver = false;
 
-    while(running) {
+    do {
+        for(int i = 0; i < sizeof(spaces)/sizeof(spaces[0]); i++) {
+            spaces[i] = ' ';
+        }
         do {
-            do {
             drawBord(spaces);
             playerMove(spaces, player);
             running = checkWinner(spaces, player, computer);
@@ -32,9 +34,7 @@ int main() {
         drawBord(spaces);
         std::cout << "Do you want to start over (1 = yes | 0 = no)?\n";
         std::cin >> startOver;
-        }while(startOver);
-        
-    }
+    }while(startOver);
 
     return 0;
 }
@@ -53,7 +53,7 @@ void drawBord(char *spaces) {
 }
 void playerMove(char *spaces, const char player) {
     int move;
-    bool error = 0;
+    bool error = false;
     std::cout << "Your turn.\n";
     do {
         std::cin >> move;
@@ -72,13 +72,13 @@ void playerMove(char *spaces, const char player) {
 }
 void computerMove(char *spaces, const char computer) {
     int move;
-    bool isTaken = 0;
+    bool isTaken = false;
     do {
         move = rand() % 8;
         if(spaces[move] != ' ') {
-            isTaken = 1;
+            isTaken = true;
         } else {
-            isTaken = 0;
+            isTaken = false;
         }
     }while(isTaken);
     spaces[move] = computer;
@@ -98,7 +98,7 @@ bool checkWinner(const char *spaces, char player, char computer) {
         (spaces[2] == player && spaces[2] == spaces[4] && spaces[4] == spaces[6]))
     {
         std::cout << "The player won!\n";
-        return 0;
+        return false;
     } else
     if( // Horizontally
         (spaces[0] == computer && spaces[0] == spaces[1] && spaces[1] == spaces[2]) ||
@@ -113,9 +113,9 @@ bool checkWinner(const char *spaces, char player, char computer) {
         (spaces[2] == computer && spaces[2] == spaces[4] && spaces[4] == spaces[6]))
     {
         std::cout << "The computer won!\n";
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
 bool checkTie(const char *spaces) {
     bool tie;
@@ -127,7 +127,7 @@ bool checkTie(const char *spaces) {
     }
     if(count == 9){
         std::cout << "The game is a tie!\n";
-        return 0;
+        return false;
     }
-    return 1;
+    return true;
 }
