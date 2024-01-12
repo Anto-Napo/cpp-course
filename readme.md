@@ -250,3 +250,59 @@ L.49 of `memory.cpp`.
 ## Recursion & Function template
 
 L.72 & 78 of `memory.cpp`.
+
+# OOP
+
+## Structs
+
+Structs are not objects.
+
+It groups variables under one name.
+
+Variables in structs are called members.
+
+the name of the struct is called *Class Member Access Operator*.
+
+L.3 & 145 of `oop.cpp`.
+
+## Enums
+
+Enums are great for a big amount of options.
+
+They are compatible with switches while strings are not.
+
+If we don't attach a number to the values, they will implicitly be 0 for the first value, 1 for the second etc..
+
+L.10 & 165 of `oop.cpp`.
+
+## Class (objects)
+
+Classes are like blueprints.
+
+They are similar to structs.
+
+If a value is given to a variable, it's his default one.
+
+L.14 & 194 of `oop.cpp`
+
+### Constructors
+
+A constructor is called when an object is instantiated.
+
+It's useful to assign values values as arguments.
+
+It can be overloaded.
+
+### Getters && Setters
+
+They make setting values or gettint value much clearer than obj.var.
+
+To use them, make the variables declaration private and make the getters and setters public. Don't forget to keep functions public.
+
+### Inheritence
+
+Inheritence extends a class to multiple classes.
+
+it's possible to override parent's function.
+
+L.114 & 216 of `oop.cpp`.
